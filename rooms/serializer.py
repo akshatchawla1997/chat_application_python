@@ -18,8 +18,8 @@ class ProfileSerializer(serializers.ModelSerializer):
         model = Profile
         fields = ['id', 'user', 'full_name', 'bio', 'image']
 class MeetingMessageSerializer(serializers.ModelSerializer):
-    reciever_profile = ProfileSerializer(read_only=True)
+    receiver_profile = ProfileSerializer(read_only=True)
     sender_profile = ProfileSerializer(read_only=True)
     class Meta:
         model = MeetingMessage
-        fields = ['id','user', 'sender','sender_profile', 'receiver_profile', 'receiver', 'message', 'is_read','date']
+        fields = ['id', 'user', 'sender', 'sender_profile', 'receiver_profile', 'receiver', 'message', 'is_read', 'date']
